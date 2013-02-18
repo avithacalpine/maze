@@ -1,0 +1,26 @@
+3 October 12
+============
+version 1.0 release
+
+
+6 October 12
+============
+version 1.1 release
+
+fix twitter javascript error when account has only one tweet
+fixes for IE8
+fix not visible old price on product page
+fix global message bug on product page
+add message about currencies update on theme activation
+fix priceslider price condition - check by type not name
+fix priceslider - filters were not applied 
+fix related title bug on product page
+fix cache related bugs
+
+add ability to set custom title for featured block
+adjust default cloud zoom options
+add option to enable/disable price slider in theme options
+add back view image
+update default images
+update documentation
+clean up code
