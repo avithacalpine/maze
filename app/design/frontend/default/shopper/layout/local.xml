@@ -30,6 +30,7 @@
 			<action method="addCss"><stylesheet>css/local.css</stylesheet></action>
 			<action method="addCss"><stylesheet>css/mobile.css</stylesheet></action>
 			<action method="addCss"><stylesheet>css/animation.css</stylesheet></action>
+			<action method="addCss"><stylesheet>css/dcsmt.css</stylesheet></action>
 
             <action method="addItem"><type>js</type><name>queldorei/html5shiv.js</name><params/><if>lt IE 9</if></action>
 			<action method="addJs"><script>queldorei/jquery-1.8.2.min.js</script></action>
@@ -44,6 +45,7 @@
 			<action method="addJs"><script>queldorei/jquery.jcarousel.min.js</script></action>
 			<action method="addJs"><script>queldorei/jquery.hoverIntent.min.js</script></action>
 			<action method="addItem"><type>skin_js</type><script>js/script.js</script></action>
+			<action method="addItem"><type>skin_js</type><script>jquery.social.media.tabs.1.6.1.min.js</script></action>
 		</reference>
 
 		<!-- add currency and cart block in header -->
