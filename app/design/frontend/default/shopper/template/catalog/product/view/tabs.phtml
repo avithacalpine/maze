@@ -39,6 +39,7 @@
     <?php endforeach; ?>
     <?php if($custom_tab->getIsActive()): ?>
         <li id="product_tabs_custom"><a href="#"><?php echo $custom_tab->getTitle(); ?></a></li>
+		<li id="product_tabs_video"><a href="#">video</a></li>
     <?php endif; ?>
 </ul>
 <?php foreach ($this->getTabs() as $_index => $_tab): ?>
@@ -49,6 +50,9 @@
 <?php if($custom_tab->getIsActive()): ?>
     <div class="product-tabs-content" id="product_tabs_custom_contents"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('shopper_custom_tab')->toHtml() ?></div>
 <?php endif; ?>
+ <div class="product-tabs-content" id="product_tabs_video_contents">
+ <iframe width="560" height="315" src="http://www.youtube.com/embed/SdBu6w0KGm8" frameborder="0" allowfullscreen></iframe>
+ </div>
 <script type="text/javascript">
 //<![CDATA[
 Varien.Tabs = Class.create();
