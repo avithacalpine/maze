@@ -29,12 +29,18 @@
 ?>
 
 <!-- HEADER BOF -->
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <div class="header-container">
     <div class="top-switch-bg">
         <div class="row clearfix">
             <div class="grid_6">
                 <?php echo $this->getChildHtml('store_language') ?>
                 <?php echo $this->getChildHtml('currencyTop') ?>
+
             </div>
             <div class="grid_6">
                 <?php echo $this->getChildHtml('topLinks') ?>
