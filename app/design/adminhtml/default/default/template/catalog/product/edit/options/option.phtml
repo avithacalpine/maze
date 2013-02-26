@@ -40,6 +40,7 @@ var firstStepTemplate = '<div class="option-box" id="option_{{id}}">'+
                     '<th class="opt-title"><?php echo Mage::helper('catalog')->__('Title') ?> <span class="required">*</span></th>'+
                     '<th class="opt-type"><?php echo Mage::helper('catalog')->__('Input Type') ?> <span class="required">*</span></th>'+
                     '<th class="opt-req"><?php echo $this->jsQuoteEscape(Mage::helper('catalog')->__('Is Required')) ?></th>'+
+					 '<th class="opt-deal"><?php echo $this->jsQuoteEscape(Mage::helper('catalog')->__('Is Deal')) ?></th>'+					  
                     '<th class="opt-order"><?php echo Mage::helper('catalog')->__('Sort Order') ?></th>'+
                     '<th class="a-right"><?php echo $this->jsQuoteEscape($this->getDeleteButtonHtml()) ?></th>'+
                 '</tr>'+
@@ -48,6 +49,7 @@ var firstStepTemplate = '<div class="option-box" id="option_{{id}}">'+
                 '<td><input type="text" class="required-entry input-text" id="<?php echo $this->getFieldId() ?>_{{id}}_title" name="<?php echo $this->getFieldName() ?>[{{id}}][title]" value="{{title}}">{{checkboxScopeTitle}}</td>'+
                 '<td><?php echo $this->getTypeSelectHtml() ?></td>'+
                 '<td class="opt-req"><?php echo $this->getRequireSelectHtml() ?></td>'+
+				'<td class="opt-deal"><?php echo $this->getDealSelectHtml() ?></td>'+
                 '<td><input type="text" class="validate-zero-or-greater input-text" name="<?php echo $this->getFieldName() ?>[{{id}}][sort_order]" value="{{sort_order}}"></td>'+
                 '<td>&nbsp;</td>'+
             '</tr></table></div>';
@@ -84,7 +86,13 @@ var productOption = {
                 if (option.value==data.is_require) option.selected = true;
             });
         }
-
+		
+		if (data.is_deal) {
+            $A($('<?php echo $this->getFieldId() ?>_'+data.id+'_is_deal').options).each(function(option){
+                if (option.value==data.is_deal) option.selected = true;
+            });
+        }
+		
         if (data.checkboxScopeTitle) {
             //set disabled
             if ($('<?php echo $this->getFieldId() ?>_'+data.option_id+'_title') && data.scopeTitleDisabled) {

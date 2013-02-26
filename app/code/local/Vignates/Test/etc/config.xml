@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<config>
+     <modules>
+        <Vignates_Test>
+          <version>1.0.0</version>
+        </Vignates_Test>
+     </modules>
+     <frontend>
+       <routers>
+          <routeurfrontend>
+              <use>standard</use>
+              <args>
+                 <module>Vignates_Test</module>
+                 <frontName>vignates</frontName>
+              </args>
+           </routeurfrontend>
+       </routers>
+	   <layout>
+	   <updates>
+			<test>
+				 <file>test.xml</file>
+			 </test>
+		</updates>
+	</layout>
+    </frontend>
+	<global>
+     <blocks>
+         <test>
+              <class>Vignates_Test_Block</class>
+         </test>
+      </blocks>
+	  <models>
+		<test>
+			<class>Vignates_Test_Model</class>
+			<resourceModel>test_mysql4</resourceModel>
+		</test>
+	<test_mysql4>
+		<class>Vignates_Test_Model_Mysql4</class>
+			<entities>
+			 <test>
+			   <table>vignates_test</table>
+			 </test>
+			</entities>
+	</test_mysql4>
+	    <!-- allow the plugin to read and write -->
+	<resources>
+			<!-- connection to write -->
+			<test_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</test_write>
+			<!-- connection to read -->
+		   <test_read>
+			  <connection>
+				 <use>core_read</use>
+			  </connection>
+		   </test_read>
+	</resources>
+
+	  </models>
+</global>
+</config>

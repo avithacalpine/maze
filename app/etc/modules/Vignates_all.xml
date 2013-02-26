@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Vignates_Test>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Vignates_Test>
+    </modules>
+</config> 

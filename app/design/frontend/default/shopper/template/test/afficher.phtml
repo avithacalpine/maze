@@ -1,0 +1,17 @@
+<?php
+//ob_start();
+ print_r($this->methodblock());
+$collection = Mage::getModel('test/test')->getCollection();
+         /* then, we check the result of the query and with the function getData() */
+        foreach($collection as $data)
+        {
+             echo $retour .= $data->getData('nom').' '.$data->getData('prenom').' '.$data->getData('telephone').'<br />';
+         }
+         //i return a success message to the user thanks to the Session.
+        // Mage::getSingleton('adminhtml/session')->addSuccess('Cool Ca marche !!');
+        // return $retour;?>
+<div class="block block-tags">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('Popular Tags'); ?></span></strong>
+    </div>
+</div>
