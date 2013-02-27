@@ -304,7 +304,7 @@ class Mage_Newsletter_Model_Subscriber extends Mage_Core_Model_Abstract
      * @throws Exception
      * @return int
      */
-    public function subscribe($email)
+    public function subscribe($email, $country = null)
     {
         $this->loadByEmail($email);
         $customerSession = Mage::getSingleton('customer/session');
@@ -336,6 +336,7 @@ class Mage_Newsletter_Model_Subscriber extends Mage_Core_Model_Abstract
                 $this->setStatus(self::STATUS_SUBSCRIBED);
             }
             $this->setSubscriberEmail($email);
+			$this->setCountry($country);
         }
 
         if ($isSubscribeOwnEmail) {

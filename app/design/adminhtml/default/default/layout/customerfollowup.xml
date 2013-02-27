@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <customerfollowup_adminhtml_customerfollowup_index>
+        <reference name="content">
+            <block type="customerfollowup/adminhtml_customerfollowup" name="customerfollowup" />
+        </reference>
+    </customerfollowup_adminhtml_customerfollowup_index>
+</layout>

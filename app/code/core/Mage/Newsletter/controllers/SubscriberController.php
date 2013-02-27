@@ -42,6 +42,7 @@ class Mage_Newsletter_SubscriberController extends Mage_Core_Controller_Front_Ac
             $session            = Mage::getSingleton('core/session');
             $customerSession    = Mage::getSingleton('customer/session');
             $email              = (string) $this->getRequest()->getPost('email');
+			$country			= $this->getRequest()->getPost('country_id');
 
             try {
                 if (!Zend_Validate::is($email, 'EmailAddress')) {
@@ -57,11 +58,12 @@ class Mage_Newsletter_SubscriberController extends Mage_Core_Controller_Front_Ac
                         ->setWebsiteId(Mage::app()->getStore()->getWebsiteId())
                         ->loadByEmail($email)
                         ->getId();
+
                 if ($ownerId !== null && $ownerId != $customerSession->getId()) {
                     Mage::throwException($this->__('This email address is already assigned to another user.'));
                 }
 
-                $status = Mage::getModel('newsletter/subscriber')->subscribe($email);
+                $status = Mage::getModel('newsletter/subscriber')->subscribe($email,$country);
                 if ($status == Mage_Newsletter_Model_Subscriber::STATUS_NOT_ACTIVE) {
                     $session->addSuccess($this->__('Confirmation request has been sent.'));
                 }

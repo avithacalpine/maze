@@ -83,6 +83,12 @@ class Mage_Adminhtml_Block_Newsletter_Subscriber_Grid extends Mage_Adminhtml_Blo
             'index'     => 'subscriber_email'
         ));
 
+		$this->addColumn('Country', array(
+            'header'    => Mage::helper('newsletter')->__('Country'),
+            'index'     => 'country',
+			'type'      => 'country'
+        ));
+		
         $this->addColumn('type', array(
             'header'    => Mage::helper('newsletter')->__('Type'),
             'index'     => 'type',
