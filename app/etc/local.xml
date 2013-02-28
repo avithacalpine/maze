@@ -53,6 +53,15 @@
             </default_setup>
         </resources>
         <session_save><![CDATA[files]]></session_save>
+		<page>
+		<layouts>
+		<homepage>
+		<label>Home Page</label>
+		<template>page/home-page.phtml</template>
+		<layout_handle>home_page</layout_handle>
+		</homepage>
+		</layouts>
+		</page>
     </global>
     <admin>
         <routers>
