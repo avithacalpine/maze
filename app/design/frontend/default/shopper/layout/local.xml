@@ -48,6 +48,7 @@
 			<action method="addItem"><type>skin_js</type><script>js/script.js</script></action>
 			<action method="addItem"><type>skin_js</type><script>js/jquery.social.media.tabs.1.6.1.min.js</script></action>
 			<action method="addItem"><type>skin_js</type><script>js/jquery.foobar.2.1.min.js</script></action>
+			<action method="addItem"><type>skin_js</type><script>js/jquery.floating_popup.1.4.min.js</script></action>
 		</reference>
 
 		<!-- add currency and cart block in header -->
