@@ -366,9 +366,12 @@ header.fixed .cart-top-container {margin-top:13px;}
 .cart-top-container .details .subtotal{ background:#fefefe; width:254px; margin:0 0 0 -10px; padding:0 26px; line-height:41px; font-size:13px; font-weight:700; text-align:right; text-transform:uppercase;  -moz-box-shadow:inset 0 0 10px rgba(57,36,32,0.18); -webkit-box-shadow:inset 0 0 10px rgba(57,36,32,0.18); box-shadow:inset 0 0 10px rgba(57,36,32,0.18); box-shadow:   }
 /********** < Popup content */
 #overlay { width:100%; height:100%; position:fixed;  _position:absolute; top:0; left:0; z-index:100001; background-color:#000000; overflow: hidden; }
-#popup { display: none; position:absolute; width:550px; z-index:100002;  border: 1px solid #000; background-color: #000; color: #fff; font-family: Tahoma,sans-serif;font-size: 14px; }
-#baner_close { color: #cc0000; }
-#country-home select{width:200px}
+#popup { display: none; position:absolute; width:780px; height:470px;z-index:100002; background-color: none;background-image:url(../images/popup_bg.png); color: #000; font-size: 14px; }
+#baner_close { background:url(../images/popup-close-window_bt.png);}
+#popup-newsletter{background:url(../images/popup-blackarea.png) no-repeat -9px 0; width:815px; position:absolute; bottom:70px;left:-12px;}
+#country-home select{width:200px; margin-left:50px;}
+button.popup-but span{height:32px; width:140px}
+button.popup-but span span{line-height:32px;}
 /********** < Search form */
 .search-top-container{float:right; position:relative; margin:33px 0 0 4px;}
 .search-top {display:block; overflow:hidden; background:#97d2c9 url('../images/icon_search.png') 50% 50% no-repeat; width:38px; height:38px; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; cursor:pointer; }
