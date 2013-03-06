@@ -14,7 +14,9 @@ var jscolor = {
 
 
 	dir : '', // location of jscolor directory (leave empty to autodetect)
-	bindClass : 'color', // class name
+	bindClass : 'timer_apptha_timer_color_text',
+        bindClass1 : 'timer_apptha_timer_color_description',
+        bindClass2 : 'timer_apptha_timer_color_heading_text_color', // class name
 	binding : true, // automatic binding via <input class="...">
 	preloading : true, // use image preloading?
 
@@ -48,7 +50,7 @@ var jscolor = {
 
 		var e = document.getElementsByTagName('base');
 		for(var i=0; i<e.length; i+=1) {
-			if(e[i].href) { base = e[i].href; }
+			if(e[i].href) {base = e[i].href;}
 		}
 
 		var e = document.getElementsByTagName('script');
@@ -68,10 +70,30 @@ var jscolor = {
 
 	bind : function() {
 		var matchClass = new RegExp('(^|\\s)('+jscolor.bindClass+')\\s*(\\{[^}]*\\})?', 'i');
+                var matchClass1 = new RegExp('(^|\\s)('+jscolor.bindClass1+')\\s*(\\{[^}]*\\})?', 'i');
+                var matchClass2 = new RegExp('(^|\\s)('+jscolor.bindClass2+')\\s*(\\{[^}]*\\})?', 'i');
 		var e = document.getElementsByTagName('input');
 		for(var i=0; i<e.length; i+=1) {
 			var m;
-			if(!e[i].color && e[i].className && (m = e[i].className.match(matchClass))) {
+			if(!e[i].color && e[i].id&& (m = e[i].id.match(matchClass))) {
+				var prop = {};
+				if(m[3]) {
+					try {
+						eval('prop='+m[3]);
+					} catch(eInvalidProp) {}
+				}
+				e[i].color = new jscolor.color(e[i], prop);
+			}
+                        if(!e[i].color && e[i].id&& (m = e[i].id.match(matchClass1))) {
+				var prop = {};
+				if(m[3]) {
+					try {
+						eval('prop='+m[3]);
+					} catch(eInvalidProp) {}
+				}
+				e[i].color = new jscolor.color(e[i], prop);
+			}
+                        if(!e[i].color && e[i].id&& (m = e[i].id.match(matchClass2))) {
 				var prop = {};
 				if(m[3]) {
 					try {
@@ -172,7 +194,7 @@ var jscolor = {
 
 
 	getMousePos : function(e) {
-		if(!e) { e = window.event; }
+		if(!e) {e = window.event;}
 		if(typeof e.pageX === 'number') {
 			return [e.pageX, e.pageY];
 		} else if(typeof e.clientX === 'number') {
@@ -189,9 +211,9 @@ var jscolor = {
 			return [window.pageXOffset, window.pageYOffset];
 		} else if(document.body && (document.body.scrollLeft || document.body.scrollTop)) {
 			return [document.body.scrollLeft, document.body.scrollTop];
-		} else if(document.documentElement && (document.documentElement.scrollLeft || document.documentElement.scrollTop)) {
+		}else if(document.documentElement && (document.documentElement.scrollLeft || document.documentElement.scrollTop)) {
 			return [document.documentElement.scrollLeft, document.documentElement.scrollTop];
-		} else {
+		}else {
 			return [0, 0];
 		}
 	},
@@ -230,11 +252,11 @@ var jscolor = {
 
 		this.toString = function() {
 			var result = '';
-			if(this.scheme !== null) { result = result + this.scheme + ':'; }
-			if(this.authority !== null) { result = result + '//' + this.authority; }
-			if(this.path !== null) { result = result + this.path; }
-			if(this.query !== null) { result = result + '?' + this.query; }
-			if(this.fragment !== null) { result = result + '#' + this.fragment; }
+			if(this.scheme !== null) {result = result + this.scheme + ':';}
+			if(this.authority !== null) {result = result + '//' + this.authority;}
+			if(this.path !== null) {result = result + this.path;}
+			if(this.query !== null) {result = result + '?' + this.query;}
+			if(this.fragment !== null) {result = result + '#' + this.fragment;}
 			return result;
 		};
 
@@ -243,7 +265,7 @@ var jscolor = {
 			var r = this;
 			var t = new jscolor.URI;
 
-			if(base.scheme === null) { return false; }
+			if(base.scheme === null) {return false;}
 
 			if(r.scheme !== null && r.scheme.toLowerCase() === base.scheme.toLowerCase()) {
 				r.scheme = null;
@@ -372,10 +394,10 @@ var jscolor = {
 				];
 				var a, b, c;
 				switch(this.pickerPosition.toLowerCase()) {
-					case 'left': a=1; b=0; c=-1; break;
-					case 'right':a=1; b=0; c=1; break;
-					case 'top':  a=0; b=1; c=-1; break;
-					default:     a=0; b=1; c=1; break;
+					case 'left':a=1;b=0;c=-1;break;
+					case 'right':a=1;b=0;c=1;break;
+					case 'top':a=0;b=1;c=-1;break;
+					default:a=0;b=1;c=1;break;
 				}
 				var l = (ts[b]+ps[b])/2;
 				var pp = [ // picker pos
@@ -419,8 +441,8 @@ var jscolor = {
 		this.exportColor = function(flags) {
 			if(!(flags & leaveValue) && valueElement) {
 				var value = this.toString();
-				if(this.caps) { value = value.toUpperCase(); }
-				if(this.hash) { value = '#'+value; }
+				if(this.caps) {value = value.toUpperCase();}
+				if(this.hash) {value = '#'+value;}
 				valueElement.value = value;
 			}
 			if(!(flags & leaveStyle) && styleElement) {
@@ -512,26 +534,26 @@ var jscolor = {
 			var n = Math.min(Math.min(r,g),b);
 			var v = Math.max(Math.max(r,g),b);
 			var m = v - n;
-			if(m === 0) { return [ null, 0, v ]; }
+			if(m === 0) {return [ null, 0, v ];}
 			var h = r===n ? 3+(b-g)/m : (g===n ? 5+(r-b)/m : 1+(g-r)/m);
 			return [ h===6?0:h, m/v, v ];
 		}
 
 
 		function HSV_RGB(h, s, v) {
-			if(h === null) { return [ v, v, v ]; }
+			if(h === null) {return [ v, v, v ];}
 			var i = Math.floor(h);
 			var f = i%2 ? h-i : 1-(h-i);
 			var m = v * (1 - s);
 			var n = v * (1 - s*f);
 			switch(i) {
 				case 6:
-				case 0: return [v,n,m];
-				case 1: return [n,v,m];
-				case 2: return [m,v,n];
-				case 3: return [m,n,v];
-				case 4: return [n,m,v];
-				case 5: return [v,m,n];
+				case 0:return [v,n,m];
+				case 1:return [n,v,m];
+				case 2:return [m,v,n];
+				case 3:return [m,n,v];
+				case 4:return [n,m,v];
+				case 5:return [v,m,n];
 			}
 		}
 
@@ -582,15 +604,15 @@ var jscolor = {
 
 			// controls interaction
 			p.box.onmouseup =
-			p.box.onmouseout = function() { target.focus(); };
-			p.box.onmousedown = function() { abortBlur=true; };
-			p.box.onmousemove = function(e) { holdPad && setPad(e); holdSld && setSld(e); };
+			p.box.onmouseout = function() {target.focus();};
+			p.box.onmousedown = function() {abortBlur=true;};
+			p.box.onmousemove = function(e) {holdPad && setPad(e);holdSld && setSld(e);};
 			p.padM.onmouseup =
-			p.padM.onmouseout = function() { if(holdPad) { holdPad=false; jscolor.fireEvent(valueElement,'change'); } };
-			p.padM.onmousedown = function(e) { holdPad=true; setPad(e); };
+			p.padM.onmouseout = function() {if(holdPad) {holdPad=false;jscolor.fireEvent(valueElement,'change');}};
+			p.padM.onmousedown = function(e) {holdPad=true;setPad(e);};
 			p.sldM.onmouseup =
-			p.sldM.onmouseout = function() { if(holdSld) { holdSld=false; jscolor.fireEvent(valueElement,'change'); } };
-			p.sldM.onmousedown = function(e) { holdSld=true; setSld(e); };
+			p.sldM.onmouseout = function() {if(holdSld) {holdSld=false;jscolor.fireEvent(valueElement,'change');}};
+			p.sldM.onmousedown = function(e) {holdSld=true;setSld(e);};
 
 			// picker
 			p.box.style.width = 4*THIS.pickerInset + 2*THIS.pickerFace + jscolor.images.pad[0] + 2*jscolor.images.arrow[0] + jscolor.images.sld[0] + 'px';
@@ -651,8 +673,8 @@ var jscolor = {
 
 			// load images in optimal order
 			switch(modeID) {
-				case 0: var padImg = 'hs.png'; break;
-				case 1: var padImg = 'hv.png'; break;
+				case 0:var padImg = 'hs.png';break;
+				case 1:var padImg = 'hv.png';break;
 			}
 			p.padM.style.background = "url('"+jscolor.getDir()+"cross.gif') no-repeat";
 			p.sldM.style.background = "url('"+jscolor.getDir()+"arrow.gif') no-repeat";
@@ -670,8 +692,8 @@ var jscolor = {
 		function redrawPad() {
 			// redraw the pad pointer
 			switch(modeID) {
-				case 0: var yComponent = 1; break;
-				case 1: var yComponent = 2; break;
+				case 0:var yComponent = 1;break;
+				case 1:var yComponent = 2;break;
 			}
 			var x = Math.round((THIS.hsv[0]/6) * (jscolor.images.pad[0]-1));
 			var y = Math.round((1-THIS.hsv[yComponent]) * (jscolor.images.pad[1]-1));
@@ -698,12 +720,12 @@ var jscolor = {
 					var f = i%2 ? THIS.hsv[0]-i : 1-(THIS.hsv[0]-i);
 					switch(i) {
 						case 6:
-						case 0: rgb=[0,1,2]; break;
-						case 1: rgb=[1,0,2]; break;
-						case 2: rgb=[2,0,1]; break;
-						case 3: rgb=[2,1,0]; break;
-						case 4: rgb=[1,2,0]; break;
-						case 5: rgb=[0,2,1]; break;
+						case 0:rgb=[0,1,2];break;
+						case 1:rgb=[1,0,2];break;
+						case 2:rgb=[2,0,1];break;
+						case 3:rgb=[2,1,0];break;
+						case 4:rgb=[1,2,0];break;
+						case 5:rgb=[0,2,1];break;
 					}
 					for(var i=0; i<seg.length; i+=1) {
 						s = 1 - 1/(seg.length-1)*i;
@@ -722,8 +744,8 @@ var jscolor = {
 		function redrawSld() {
 			// redraw the slider pointer
 			switch(modeID) {
-				case 0: var yComponent = 2; break;
-				case 1: var yComponent = 1; break;
+				case 0:var yComponent = 2;break;
+				case 1:var yComponent = 1;break;
 			}
 			var y = Math.round((1-THIS.hsv[yComponent]) * (jscolor.images.sld[1]-1));
 			jscolor.picker.sldM.style.backgroundPosition =
@@ -758,8 +780,8 @@ var jscolor = {
 			var x = posM[0]-posPad[0];
 			var y = posM[1]-posPad[1];
 			switch(modeID) {
-				case 0: THIS.fromHSV(x*(6/(jscolor.images.pad[0]-1)), 1 - y/(jscolor.images.pad[1]-1), null, leaveSld); break;
-				case 1: THIS.fromHSV(x*(6/(jscolor.images.pad[0]-1)), null, 1 - y/(jscolor.images.pad[1]-1), leaveSld); break;
+				case 0:THIS.fromHSV(x*(6/(jscolor.images.pad[0]-1)), 1 - y/(jscolor.images.pad[1]-1), null, leaveSld);break;
+				case 1:THIS.fromHSV(x*(6/(jscolor.images.pad[0]-1)), null, 1 - y/(jscolor.images.pad[1]-1), leaveSld);break;
 			}
 		}
 
@@ -768,8 +790,8 @@ var jscolor = {
 			var posM = jscolor.getMousePos(e);
 			var y = posM[1]-posPad[1];
 			switch(modeID) {
-				case 0: THIS.fromHSV(null, null, 1 - y/(jscolor.images.sld[1]-1), leavePad); break;
-				case 1: THIS.fromHSV(null, 1 - y/(jscolor.images.sld[1]-1), null, leavePad); break;
+				case 0:THIS.fromHSV(null, null, 1 - y/(jscolor.images.sld[1]-1), leavePad);break;
+				case 1:THIS.fromHSV(null, 1 - y/(jscolor.images.sld[1]-1), null, leavePad);break;
 			}
 		}
 
@@ -794,11 +816,11 @@ var jscolor = {
 
 		// target
 		jscolor.addEvent(target, 'focus', function() {
-			if(THIS.pickerOnfocus) { THIS.showPicker(); }
+			if(THIS.pickerOnfocus) {THIS.showPicker();}
 		});
 		jscolor.addEvent(target, 'blur', function() {
 			if(!abortBlur) {
-				window.setTimeout(function(){ abortBlur || blurTarget(); abortBlur=false; }, 0);
+				window.setTimeout(function(){abortBlur || blurTarget();abortBlur=false;}, 0);
 			} else {
 				abortBlur = false;
 			}
@@ -825,8 +847,8 @@ var jscolor = {
 
 		// require images
 		switch(modeID) {
-			case 0: jscolor.requireImage('hs.png'); break;
-			case 1: jscolor.requireImage('hv.png'); break;
+			case 0:jscolor.requireImage('hs.png');break;
+			case 1:jscolor.requireImage('hv.png');break;
 		}
 		jscolor.requireImage('cross.gif');
 		jscolor.requireImage('arrow.gif');
@@ -838,3 +860,4 @@ var jscolor = {
 
 
 jscolor.install();
+//jscolor.noConflict();
