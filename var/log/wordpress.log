@@ -1,0 +1,247 @@
+2013-03-06T11:21:31+00:00 DEBUG (7): exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.wordpress_product_post' doesn't exist' in C:\xampp\htdocs\sample\maze\lib\Zend\Db\Statement\Pdo.php:228
+Stack trace:
+#0 C:\xampp\htdocs\sample\maze\lib\Zend\Db\Statement\Pdo.php(228): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\sample\maze\lib\Varien\Db\Statement\Pdo\Mysql.php(110): Zend_Db_Statement_Pdo->_execute(Array)
+#2 C:\xampp\htdocs\sample\maze\lib\Zend\Db\Statement.php(300): Varien_Db_Statement_Pdo_Mysql->_execute(Array)
+#3 C:\xampp\htdocs\sample\maze\lib\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#4 C:\xampp\htdocs\sample\maze\lib\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT * FROM w...', Array)
+#5 C:\xampp\htdocs\sample\maze\lib\Varien\Db\Adapter\Pdo\Mysql.php(419): Zend_Db_Adapter_Pdo_Abstract->query('SELECT * FROM w...', Array)
+#6 C:\xampp\htdocs\sample\maze\lib\Zend\Db\Adapter\Abstract.php(734): Varien_Db_Adapter_Pdo_Mysql->query('SELECT * FROM w...', Array)
+#7 C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\sql\wordpress_setup\upgrade-2.4.39-2.4.40.php(78): Zend_Db_Adapter_Abstract->fetchAll('SELECT * FROM w...')
+#8 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\Resource\Setup.php(624): include('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\Resource\Setup.php(422): Mage_Core_Model_Resource_Setup->_modifyResourceDb('upgrade', '2.4.39', '2.5.0.1')
+#10 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\Resource\Setup.php(327): Mage_Core_Model_Resource_Setup->_installResourceDb('2.5.0.1')
+#11 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\Resource\Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#12 C:\xampp\htdocs\sample\maze\downloader\Maged\Controller.php(940): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#13 C:\xampp\htdocs\sample\maze\downloader\Maged\Controller.php(403): Maged_Controller->cleanCache()
+#14 C:\xampp\htdocs\sample\maze\downloader\Maged\Controller.php(789): Maged_Controller->cleanCacheAction()
+#15 C:\xampp\htdocs\sample\maze\downloader\Maged\Controller.php(492): Maged_Controller->dispatch()
+#16 C:\xampp\htdocs\sample\maze\downloader\index.php(36): Maged_Controller::run()
+#17 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.wordpress_product_post' doesn't exist' in C:\xampp\htdocs\sample\maze\lib\Zend\Db\Statement\Pdo.php:234
+Stack trace:
+#0 C:\xampp\htdocs\sample\maze\lib\Varien\Db\Statement\Pdo\Mysql.php(110): Zend_Db_Statement_Pdo->_execute(Array)
+#1 C:\xampp\htdocs\sample\maze\lib\Zend\Db\Statement.php(300): Varien_Db_Statement_Pdo_Mysql->_execute(Array)
+#2 C:\xampp\htdocs\sample\maze\lib\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#3 C:\xampp\htdocs\sample\maze\lib\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT * FROM w...', Array)
+#4 C:\xampp\htdocs\sample\maze\lib\Varien\Db\Adapter\Pdo\Mysql.php(419): Zend_Db_Adapter_Pdo_Abstract->query('SELECT * FROM w...', Array)
+#5 C:\xampp\htdocs\sample\maze\lib\Zend\Db\Adapter\Abstract.php(734): Varien_Db_Adapter_Pdo_Mysql->query('SELECT * FROM w...', Array)
+#6 C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\sql\wordpress_setup\upgrade-2.4.39-2.4.40.php(78): Zend_Db_Adapter_Abstract->fetchAll('SELECT * FROM w...')
+#7 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\Resource\Setup.php(624): include('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\Resource\Setup.php(422): Mage_Core_Model_Resource_Setup->_modifyResourceDb('upgrade', '2.4.39', '2.5.0.1')
+#9 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\Resource\Setup.php(327): Mage_Core_Model_Resource_Setup->_installResourceDb('2.5.0.1')
+#10 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\Resource\Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#11 C:\xampp\htdocs\sample\maze\downloader\Maged\Controller.php(940): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#12 C:\xampp\htdocs\sample\maze\downloader\Maged\Controller.php(403): Maged_Controller->cleanCache()
+#13 C:\xampp\htdocs\sample\maze\downloader\Maged\Controller.php(789): Maged_Controller->cleanCacheAction()
+#14 C:\xampp\htdocs\sample\maze\downloader\Maged\Controller.php(492): Maged_Controller->dispatch()
+#15 C:\xampp\htdocs\sample\maze\downloader\index.php(36): Maged_Controller::run()
+#16 {main}
+2013-03-06T11:28:37+00:00 DEBUG (7): exception 'Exception' with message 'WordPress Auto-Login details not set. Login failed.' in C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php:76
+Stack trace:
+#0 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Action.php(419): Fishpig_Wordpress_Adminhtml_WordpressController->loginAction()
+#1 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('login')
+#2 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Front.php(176): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#3 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#4 C:\xampp\htdocs\sample\maze\app\Mage.php(683): Mage_Core_Model_App->run(Array)
+#5 C:\xampp\htdocs\sample\maze\index.php(87): Mage::run('', 'store')
+#6 {main}
+2013-03-06T11:28:45+00:00 DEBUG (7): exception 'Exception' with message 'WordPress Auto-Login details not set. Login failed.' in C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php:76
+Stack trace:
+#0 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Action.php(419): Fishpig_Wordpress_Adminhtml_WordpressController->loginAction()
+#1 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('login')
+#2 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Front.php(176): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#3 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#4 C:\xampp\htdocs\sample\maze\app\Mage.php(683): Mage_Core_Model_App->run(Array)
+#5 C:\xampp\htdocs\sample\maze\index.php(87): Mage::run('', 'store')
+#6 {main}
+2013-03-06T11:29:15+00:00 DEBUG (7): exception 'Exception' with message 'WordPress Auto Login Failed: HTTP/1.1 404 Not Found
+Date: Wed, 06 Mar 2013 11:29:12 GMT
+Server: Apache/2.4.2 (Win32) OpenSSL/1.0.1c PHP/5.4.4
+X-Powered-By: PHP/5.4.4
+Set-Cookie: frontend=rnuq38e26p6qkcn254cib4rpj3; expires=Wed, 06-Mar-2013 12:29:14 GMT; path=/sample/maze; domain=localhost; HttpOnly
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Set-Cookie: user=Alex+Porter; expires=Wed, 06-Mar-2013 12:29:15 GMT
+Status: 404 File not found
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8' in C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\Helper\System.php:469
+Stack trace:
+#0 C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(81): Fishpig_Wordpress_Helper_System->loginToWordPress('admin', 'admin123', 'http://localhos...')
+#1 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Action.php(419): Fishpig_Wordpress_Adminhtml_WordpressController->loginAction()
+#2 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('login')
+#3 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Front.php(176): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\xampp\htdocs\sample\maze\app\Mage.php(683): Mage_Core_Model_App->run(Array)
+#6 C:\xampp\htdocs\sample\maze\index.php(87): Mage::run('', 'store')
+#7 {main}
+2013-03-06T11:29:29+00:00 DEBUG (7): exception 'Exception' with message 'WordPress Auto Login Failed: HTTP/1.1 404 Not Found
+Date: Wed, 06 Mar 2013 11:29:25 GMT
+Server: Apache/2.4.2 (Win32) OpenSSL/1.0.1c PHP/5.4.4
+X-Powered-By: PHP/5.4.4
+Set-Cookie: frontend=g6h1ftnhnscjpm7hqa6f3acpm2; expires=Wed, 06-Mar-2013 12:29:28 GMT; path=/sample/maze; domain=localhost; HttpOnly
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Set-Cookie: user=Alex+Porter; expires=Wed, 06-Mar-2013 12:29:29 GMT
+Status: 404 File not found
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8' in C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\Helper\System.php:469
+Stack trace:
+#0 C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(81): Fishpig_Wordpress_Helper_System->loginToWordPress('admin', 'admin123', 'http://localhos...')
+#1 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Action.php(419): Fishpig_Wordpress_Adminhtml_WordpressController->loginAction()
+#2 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('login')
+#3 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Front.php(176): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\xampp\htdocs\sample\maze\app\Mage.php(683): Mage_Core_Model_App->run(Array)
+#6 C:\xampp\htdocs\sample\maze\index.php(87): Mage::run('', 'store')
+#7 {main}
+2013-03-06T11:32:22+00:00 DEBUG (7): exception 'Exception' with message 'WordPress Auto Login Failed: HTTP/1.1 404 Not Found
+Date: Wed, 06 Mar 2013 11:32:18 GMT
+Server: Apache/2.4.2 (Win32) OpenSSL/1.0.1c PHP/5.4.4
+X-Powered-By: PHP/5.4.4
+Set-Cookie: frontend=p3fk9qbfsffebgejhi1ict4te6; expires=Wed, 06-Mar-2013 12:32:20 GMT; path=/sample/maze; domain=localhost; HttpOnly
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Set-Cookie: user=Alex+Porter; expires=Wed, 06-Mar-2013 12:32:21 GMT
+Status: 404 File not found
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8' in C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\Helper\System.php:469
+Stack trace:
+#0 C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(81): Fishpig_Wordpress_Helper_System->loginToWordPress('admin', 'admin123', 'http://localhos...')
+#1 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Action.php(419): Fishpig_Wordpress_Adminhtml_WordpressController->loginAction()
+#2 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('login')
+#3 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Front.php(176): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\xampp\htdocs\sample\maze\app\Mage.php(683): Mage_Core_Model_App->run(Array)
+#6 C:\xampp\htdocs\sample\maze\index.php(87): Mage::run('', 'store')
+#7 {main}
+2013-03-06T11:33:00+00:00 DEBUG (7): exception 'Exception' with message 'WordPress Auto Login Failed: HTTP/1.1 404 Not Found
+Date: Wed, 06 Mar 2013 11:32:57 GMT
+Server: Apache/2.4.2 (Win32) OpenSSL/1.0.1c PHP/5.4.4
+X-Powered-By: PHP/5.4.4
+Set-Cookie: frontend=c53lu26nn0tu1nu5ffh9s0fih1; expires=Wed, 06-Mar-2013 12:32:58 GMT; path=/sample/maze; domain=localhost; HttpOnly
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Set-Cookie: user=Alex+Porter; expires=Wed, 06-Mar-2013 12:33:00 GMT
+Status: 404 File not found
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8' in C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\Helper\System.php:469
+Stack trace:
+#0 C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(81): Fishpig_Wordpress_Helper_System->loginToWordPress('admin', 'admin123', 'http://localhos...')
+#1 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Action.php(419): Fishpig_Wordpress_Adminhtml_WordpressController->loginAction()
+#2 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('login')
+#3 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Front.php(176): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\xampp\htdocs\sample\maze\app\Mage.php(683): Mage_Core_Model_App->run(Array)
+#6 C:\xampp\htdocs\sample\maze\index.php(87): Mage::run('', 'store')
+#7 {main}
+2013-03-06T11:33:11+00:00 DEBUG (7): exception 'Exception' with message 'WordPress Auto Login Failed: HTTP/1.1 404 Not Found
+Date: Wed, 06 Mar 2013 11:33:07 GMT
+Server: Apache/2.4.2 (Win32) OpenSSL/1.0.1c PHP/5.4.4
+X-Powered-By: PHP/5.4.4
+Set-Cookie: frontend=6uue0eh9n1lm2ap83qo4bpe973; expires=Wed, 06-Mar-2013 12:33:09 GMT; path=/sample/maze; domain=localhost; HttpOnly
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Set-Cookie: user=Alex+Porter; expires=Wed, 06-Mar-2013 12:33:11 GMT
+Status: 404 File not found
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8' in C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\Helper\System.php:469
+Stack trace:
+#0 C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(81): Fishpig_Wordpress_Helper_System->loginToWordPress('admin', 'admin123', 'http://localhos...')
+#1 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Action.php(419): Fishpig_Wordpress_Adminhtml_WordpressController->loginAction()
+#2 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('login')
+#3 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Front.php(176): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\xampp\htdocs\sample\maze\app\Mage.php(683): Mage_Core_Model_App->run(Array)
+#6 C:\xampp\htdocs\sample\maze\index.php(87): Mage::run('', 'store')
+#7 {main}
+2013-03-06T11:34:10+00:00 DEBUG (7): exception 'Exception' with message 'WordPress Auto Login Failed: HTTP/1.1 404 Not Found
+Date: Wed, 06 Mar 2013 11:34:06 GMT
+Server: Apache/2.4.2 (Win32) OpenSSL/1.0.1c PHP/5.4.4
+X-Powered-By: PHP/5.4.4
+Set-Cookie: frontend=vbivnm48f71bpucvd6sm40ung4; expires=Wed, 06-Mar-2013 12:34:08 GMT; path=/sample/maze; domain=localhost; HttpOnly
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Set-Cookie: user=Alex+Porter; expires=Wed, 06-Mar-2013 12:34:10 GMT
+Status: 404 File not found
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8' in C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\Helper\System.php:469
+Stack trace:
+#0 C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(81): Fishpig_Wordpress_Helper_System->loginToWordPress('admin', 'admin123', 'http://localhos...')
+#1 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Action.php(419): Fishpig_Wordpress_Adminhtml_WordpressController->loginAction()
+#2 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('login')
+#3 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Front.php(176): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\xampp\htdocs\sample\maze\app\Mage.php(683): Mage_Core_Model_App->run(Array)
+#6 C:\xampp\htdocs\sample\maze\index.php(87): Mage::run('', 'store')
+#7 {main}
+2013-03-06T13:23:48+00:00 DEBUG (7): exception 'Exception' with message 'WordPress Auto Login Failed: HTTP/1.1 404 Not Found
+Date: Wed, 06 Mar 2013 13:23:44 GMT
+Server: Apache/2.4.2 (Win32) OpenSSL/1.0.1c PHP/5.4.4
+X-Powered-By: PHP/5.4.4
+Set-Cookie: frontend=oou4l0fcpbsf98g44j4dfocet5; expires=Wed, 06-Mar-2013 14:23:45 GMT; path=/sample/maze; domain=localhost; HttpOnly
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Set-Cookie: user=Alex+Porter; expires=Wed, 06-Mar-2013 14:23:48 GMT
+Status: 404 File not found
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8' in C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\Helper\System.php:469
+Stack trace:
+#0 C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(81): Fishpig_Wordpress_Helper_System->loginToWordPress('admin', 'admin123', 'http://localhos...')
+#1 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Action.php(419): Fishpig_Wordpress_Adminhtml_WordpressController->loginAction()
+#2 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('login')
+#3 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Front.php(176): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\xampp\htdocs\sample\maze\app\Mage.php(683): Mage_Core_Model_App->run(Array)
+#6 C:\xampp\htdocs\sample\maze\index.php(87): Mage::run('', 'store')
+#7 {main}
+2013-03-06T13:23:58+00:00 DEBUG (7): exception 'Exception' with message 'WordPress Auto Login Failed: HTTP/1.1 404 Not Found
+Date: Wed, 06 Mar 2013 13:23:55 GMT
+Server: Apache/2.4.2 (Win32) OpenSSL/1.0.1c PHP/5.4.4
+X-Powered-By: PHP/5.4.4
+Set-Cookie: frontend=fhtm5qtr80gu2l8apncs6vedh5; expires=Wed, 06-Mar-2013 14:23:56 GMT; path=/sample/maze; domain=localhost; HttpOnly
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Set-Cookie: user=Alex+Porter; expires=Wed, 06-Mar-2013 14:23:58 GMT
+Status: 404 File not found
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8' in C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\Helper\System.php:469
+Stack trace:
+#0 C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(81): Fishpig_Wordpress_Helper_System->loginToWordPress('admin', 'admin123', 'http://localhos...')
+#1 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Action.php(419): Fishpig_Wordpress_Adminhtml_WordpressController->loginAction()
+#2 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('login')
+#3 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Front.php(176): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\xampp\htdocs\sample\maze\app\Mage.php(683): Mage_Core_Model_App->run(Array)
+#6 C:\xampp\htdocs\sample\maze\index.php(87): Mage::run('', 'store')
+#7 {main}
+2013-03-06T13:24:22+00:00 DEBUG (7): exception 'Exception' with message 'WordPress Auto Login Failed: HTTP/1.1 404 Not Found
+Date: Wed, 06 Mar 2013 13:24:19 GMT
+Server: Apache/2.4.2 (Win32) OpenSSL/1.0.1c PHP/5.4.4
+X-Powered-By: PHP/5.4.4
+Set-Cookie: frontend=hnm0f37h930tkkfuuh56u2g5f4; expires=Wed, 06-Mar-2013 14:24:20 GMT; path=/sample/maze; domain=localhost; HttpOnly
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Set-Cookie: user=Alex+Porter; expires=Wed, 06-Mar-2013 14:24:22 GMT
+Status: 404 File not found
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8' in C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\Helper\System.php:469
+Stack trace:
+#0 C:\xampp\htdocs\sample\maze\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(81): Fishpig_Wordpress_Helper_System->loginToWordPress('admin', 'admin123', 'http://localhos...')
+#1 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Action.php(419): Fishpig_Wordpress_Adminhtml_WordpressController->loginAction()
+#2 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('login')
+#3 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Controller\Varien\Front.php(176): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\xampp\htdocs\sample\maze\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\xampp\htdocs\sample\maze\app\Mage.php(683): Mage_Core_Model_App->run(Array)
+#6 C:\xampp\htdocs\sample\maze\index.php(87): Mage::run('', 'store')
+#7 {main}

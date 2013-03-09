@@ -212,7 +212,9 @@
                 <action method="addTab" translate="title" module="tag" ><alias>tags_tabbed</alias><title>Tags</title><block>tag/product_list</block><template>tag/list.phtml</template></action>
                 <action method="addTab" translate="title" module="review" ><alias>review_tabbed</alias><title>Reviews</title><block>review/product_view_list</block><template>review/product_info_review.phtml</template></action>
 				<action method="addTab" translate="title" module="catalog"><alias>attachmentstabbed</alias><title>Downloads</title><block>fileuploader/fileuploader</block><template>fileuploader/attachments.phtml</template></action>
-				<action method="addTab" translate="title" module="contacts"><alias>contacts_tabbed</alias><title>VIP</title><block>core/template</block><template>contacts/form.phtml</template></action>
+				<action method="addTab" translate="title" module="contacts"><alias>contacts_tabbed</alias><title>VIP</title><block>webforms/webforms</block><template>webforms/default.phtml</template> 
+				
+				</action>
             </block>
 		</reference>
 

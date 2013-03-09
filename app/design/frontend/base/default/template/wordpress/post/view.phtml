@@ -1,0 +1,55 @@
+<?php
+/**
+ * @category    Fishpig
+ * @package     Fishpig_Wordpress
+ * @license     http://fishpig.co.uk/license.txt
+ * @author      Ben Tideswell <help@fishpig.co.uk>
+ */
+?>
+<?php $post = $this->getPost() ?>
+<?php if ($post): ?>
+	<?php $helper = $this->helper('wordpress') ?>
+	<?php $author = $post->getAuthor() ?>
+	<?php if ($this->helper('wordpress/plugin_shareThis')->canDisplayOnPost()): ?>
+		<?php echo $this->helper('wordpress/plugin_shareThis')->getJavascriptHtml() ?>
+	<?php endif; ?>
+	<div class="page-title post-title">
+		<h1><?php echo $this->escapeHtml($post->getPostTitle()) ?></h1>
+	</div>
+	<div class="post-view">
+		<p class="post-date when"><?php echo $this->__('This entry was posted on %s<span class=\"by-author\"> by %s</span>.', $post->getPostDate(), $post->getAuthor()->getDisplayName()) ?></p>
+		<div class="post-entry entry std<?php if ($post->getFeaturedImage): ?> post-entry-with-image<?php endif; ?>">
+			<?php if ($post->isViewableForVisitor()): ?>
+				<?php if ($featuredImage = $post->getFeaturedImage()): ?>
+					<div class="featured-image left"><img src="<?php echo $featuredImage->getAvailableImage() ?>" alt="<?php echo $this->escapeHtml($post->getPostTitle()) ?>"/></div>
+				<?php endif; ?>
+				<?php echo $post->getPostContent() ?>
+			<?php else: ?>
+				<?php echo $this->getPasswordProtectHtml() ?>
+			<?php endif; ?>
+		</div>
+		<?php echo $this->getMetaBlock()->setPost($post)->toHtml() ?>
+		<?php if ($this->helper('wordpress/plugin_shareThis')->canDisplayOnPost()): ?>
+				<div class="sharethis-icons" id="sharethis-icons-<?php echo $post->getId() ?>"><?php echo $this->helper('wordpress/plugin_shareThis')->getIcons($post) ?></div>
+		<?php endif; ?>
+		<?php echo $this->getChildHtml('related_posts') ?>
+		<?php // echo $this->getCommentsHtml() ?>
+		<?php echo Mage::helper('wordpress')->curPageURL(); ?>
+		<div id="comments">
+			<div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'etikdeals'; // required: replace example with your forum shortname
+			var disqus_url = '<?php echo Mage::helper('wordpress')->curPageURL(); ?>';
+			//alert(disqus_url);
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments !</a></noscript>
+			</div>
+	</div>
+<?php endif; ?>
